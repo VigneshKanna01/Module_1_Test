@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+nav{
+  background:#333;
+  padding:10px;
+}
+nav ul{
+  display:flex;
+  list-style:none;
+  gap:20px;
+}
+nav a{
+  color:white;
+  text-decoration:none;
+  font-size:20px;
+}
+.menu{
+  display:none;
+  font-size:22px;
+  color:white;
+}
+
+@media(max-width:600px){
+  nav ul{
+    display:none;
+    flex-direction:column;
+  }
+  nav ul.show{
+    display:flex;
+  }
+  .menu{
+    display:block;
+    cursor:pointer;
+  }
+}
+</style>
+</head>
+
+<body>
+<nav>
+  <span class="menu" onclick="toggleMenu()">All</span>
+  <ul id="navList">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
+
+<script>
+function toggleMenu(){
+  document.getElementById("navList").classList.toggle("show");
+}
+</script>
+</body>
+</html>

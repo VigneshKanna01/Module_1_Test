@@ -1,0 +1,24 @@
+<form onsubmit="return validate()">
+  Name: <input type="text" id="name"><br>
+  Email: <input type="email" id="email"><br>
+  Password: <input type="password" id="pass"><br>
+  <span id="error" style="color:red"></span><br>
+  <button>Submit</button>
+</form>
+
+<script>
+function validate(){
+  let n = document.getElementById("name").value;
+  let p = document.getElementById("pass").value;
+
+  if(n === ""){
+    document.getElementById("error").innerText = "Name is required";
+    return false;
+  }
+  if(p.length < 6){
+    document.getElementById("error").innerText = "Password must be 6 characters";
+    return false;
+  }
+  return true;
+}
+</script>
